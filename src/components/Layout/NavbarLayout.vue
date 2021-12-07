@@ -1,35 +1,18 @@
 <template>
     <div>
-        <v-toolbar app fixed height="90" class="blue darken-4">
-            <v-row>
-                <v-col md="3" class="text-h4 font-weight-bold yellow--text">
-                    <div role="button" @click="home">
+        <v-app-bar app fixed clipped-left height="90" color="blue darken-4" elevation="4">
+
+                    <div role="button" class="text-h5 font-weight-bold yellow--text" @click="home">
                         AganTravel.com
                     </div>
-                </v-col>
-                <v-col md="1">
-                    <div role="button" class="text-h6 mt-1 white--text" @click="bus">
-                        Bus
-                    </div>
-                </v-col >
-                <v-col md="1">
-                    <div role="button" class="text-h6 mt-1 white--text" @click="kereta">
-                        Kereta
-                    </div>
-                </v-col>
-                <v-col md="1">
-                    <div role="button" class="text-h6 mt-1 white--text" @click="pesawat">
-                        Pesawat
-                    </div>
-                </v-col>
-                <v-col md="6 text-right">
-                    <v-btn class="mt-1 mr-2" outlined color="white" @click="register">Register</v-btn>
-                    <v-btn class="mt-1" outlined color="white" @click="login">Login</v-btn>
-                </v-col>
-            </v-row>
+                    <v-spacer></v-spacer>
+
+                    <v-btn class="mr-3" outlined color="white" @click="register">Register</v-btn>
+                    <v-btn class="" outlined color="white" @click="login">Login</v-btn>
+
             <!-- <v-app-bar-title>TokoLaku.id</v-app-bar-title> -->
             <!-- <v-spacer> -->
-        </v-toolbar>
+        </v-app-bar>
         <div class="pa-5">
             <router-view></router-view>
         </div>
@@ -42,25 +25,7 @@
         methods: {
             home() {
                 this.$router.push({
-                    name: 'Home',
-                });
-            },
-
-            bus() {
-                this.$router.push({
-                    name: 'List Bus',
-                });
-            },
-
-            kereta() {
-                this.$router.push({
-                    name: 'List Kereta',
-                });
-            },
-
-            pesawat() {
-                this.$router.push({
-                    name: 'List Pesawat',
+                    name: 'Welcome',
                 });
             },
 

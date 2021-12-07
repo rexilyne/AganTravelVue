@@ -11,10 +11,16 @@ const router = new VueRouter({
     mode: "history",
     routes: [
         {
-            path: '/home',
-            name: 'Home',
-            meta: { title: 'Home' },
-            component: importComponent('Home'),
+            path: '/landing',
+            component: importComponent('Layout/NavbarLayout'),
+            children: [
+                {
+                    path: '/landing/welcome',
+                    name: 'Welcome',
+                    meta: { title: 'Welcome' },
+                    component: importComponent('Welcome')
+                }
+            ]
         },
 
         {
@@ -44,6 +50,14 @@ const router = new VueRouter({
             path: '/user',
             component: importComponent('Layout/DashboardLayout'),
             children: [
+                // Home
+                {
+                    path: '/user/home',
+                    name: 'Home',
+                    meta: { title: 'Home' },
+                    component: importComponent('User/Home'),
+                },
+
                 // Profile
                 {
                     path: '/user/profile',
@@ -80,7 +94,7 @@ const router = new VueRouter({
 
         {
             path: '/bus',
-            component: importComponent('Layout/NavbarLayout'),
+            component: importComponent('Layout/DashboardLayout'),
             children: [
                 // List Bus
                 {
@@ -94,7 +108,7 @@ const router = new VueRouter({
 
         {
             path: '/kereta',
-            component: importComponent('Layout/NavbarLayout'),
+            component: importComponent('Layout/DashboardLayout'),
             children: [
                 // List Bus
                 {
@@ -108,7 +122,7 @@ const router = new VueRouter({
 
         {
             path: '/pesawat',
-            component: importComponent('Layout/NavbarLayout'),
+            component: importComponent('Layout/DashboardLayout'),
             children: [
                 // List Bus
                 {
@@ -123,7 +137,7 @@ const router = new VueRouter({
  
         {
             path: '*',
-            redirect: '/home'
+            redirect: '/landing/welcome'
         }
     ]
 });
