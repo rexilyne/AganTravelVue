@@ -32,7 +32,7 @@
                   <div class="caption">
                     Sudah punya akun?
                     <a
-                      href="/authentication/login"
+                      @click="login"
                       class="text-decoration-none"
                       >Login</a
                     >

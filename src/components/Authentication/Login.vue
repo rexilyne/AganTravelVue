@@ -31,7 +31,7 @@
                   <div class="caption">
                     Belum punya akun?
                     <a
-                      href="/authentication/register"
+                      @click="register"
                       class="text-decoration-none"
                       >Register</a
                     >
